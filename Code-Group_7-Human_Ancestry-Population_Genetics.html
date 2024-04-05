@@ -1,0 +1,1103 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Code - Group 7 - Human Ancestry - Population Genetics</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e97e0f3d-8464-4083-a466-e980715125ff" class="page sans"><header><h1 class="page-title">Code - Group 7 - Human Ancestry - Population Genetics</h1><p class="page-description"></p></header><div class="page-body"><p id="5cff3525-2e87-4a45-86d8-3cc010c44088" class="">Authors: August Nygaard Bodilsen, Fabio Rauscher, Lars Emil Køie Nielsen, Sebastian Bach Nielsen, Peter Daniel Tejl Stæhr<br/>Supervisor: Frederik Filip Vinggaard Stæger<br/></p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Final QC</summary><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c0cd3ac1-160b-412f-9961-c25af0a6ab29" class="code"><code class="language-Shell"># 0. Fuse popinfo and fam file as preparation
+grep -Po &quot;[^\t]+\t[^\t]+$&quot; wgs_data.popinfo &gt; merge1.txt
+join merge1.txt wgs_data.fam &gt; merge2.txt
+grep -Po &quot;[A-z]+ IND.+$&quot; merge2.txt &gt; wgs_data.fam
+rm merge1.txt merge2.txt
+
+# 1. Summary statistics for overview
+plink --bfile wgs_data --r2
+plink --bfile wgs_data --freq
+plink --bfile wgs_data --ibc
+plink --bfile wgs_data --missing
+
+
+# 2. Remove individuals with high missingness and remaining SNPs with missingness
+plink --bfile wgs_data --mind 0.1 --geno 0.1 --make-bed --out wgs_data_missing 
+
+# 3. Split the populations for further QC
+touch keep.txt
+for p in AA Nairobi Banjul Spain
+do
+	echo $p &gt; keep.txt
+	plink --bfile wgs_data_missing --keep-fam keep.txt --make-bed --out $p
+done
+
+# 4. Remove variants with fixed alleles
+for p in AA Nairobi Banjul Spain
+do
+	plink --bfile $p --maf 0.05 --make-bed --out maf_$p
+done
+
+# 5. Check for relatedness
+for p in AA Nairobi Banjul Spain
+do
+	plink --bfile maf_$p --genome --out related_$p
+	awk &#x27;$10 &gt; 0.185 {print $1, $2}&#x27; related_$p.genome &gt; related_individuals_to_remove.txt
+	plink --bfile maf_$p --remove related_individuals_to_remove.txt --make-bed --out relatives_$p
+done
+
+# 6. Check for Linkage disequilibrium within the sample
+for p in AA Nairobi Banjul Spain
+do
+	plink --bfile relatives_$p --indep-pairwise 50 5 0.5 
+	plink --bfile relatives_$p --extract plink.prune.in --make-bed --out pruned_$p
+done
+
+# 7. Combine the datasets again
+# create .txt file with population names
+echo &gt; pop_files.txt pruned_AA
+for p in Nairobi Banjul Spain
+do 
+	echo &gt;&gt; pop_files.txt pruned_$p
+done
+plink --merge-list pop_files.txt --make-bed --out qc_merged
+
+# 8. filtering the .popinfo file after QC
+cut -d &#x27; &#x27; -f2 qc_merged.fam &gt; data.fam.ids
+sort data.fam.ids &gt; data.fam.ids.sorted
+join -1 1 -2 1 data.fam.ids.sorted wgs_data.popinfo &gt; data.popinfo.filtered</code></pre></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Getting PCA plots before and after QC:</summary><div class="indented"><h3 id="ebe9f1b4-feb8-494f-9307-22361ea43fdf" class="">Before QC:</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d71cbd1a-825c-401d-a5a0-0f28545be3e1" class="code"><code class="language-R">library(snpMatrix)
+
+
+# Load the data into a variable called geno
+data &lt;- read.plink(&quot;wgs_data&quot;)
+popinfo &lt;- read.table(&quot;wgs_data.popinfo&quot;)
+geno &lt;- matrix(as.integer(data@.Data),nrow=nrow(data@.Data))
+geno[geno==0] &lt;- NA
+geno &lt;- geno-1
+# Number of missing samples per site
+nMis &lt;- colSums(is.na(geno))
+# Only keep sites with 0 missing samples.
+geno &lt;- geno[,nMis==0]
+# Perform PCA
+pca &lt;- prcomp(geno, scale=T, center=T)
+# Extract the PCs
+pcs &lt;- as.data.frame(pca$x)
+
+# Custom colors matching our original missingness per individual color scheme
+palette(c(&#x27;#5096CA&#x27;, &#x27;#E09B60&#x27;, &#x27;#58B173&#x27;, &#x27;#C56271&#x27;))
+plot(pcs$PC1, pcs$PC2, col=popinfo$V3, pch=19, las=1, bty=&#x27;L&#x27;,
+		xlab=&quot;PC1&quot;, ylab=&quot;PC2&quot;,
+    main=&#x27;PCA on 111 individuals from 4 populations before quality control&#x27;)
+legend(&#x27;topright&#x27;, legend=levels(popinfo$V3), col=1:length(levels(popinfo$V3)), pch=19)</code></pre><h3 id="d1ba752f-c185-49b8-a7b3-b90bc24bf416" class="">After QC:</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5d952532-898c-4ed7-b336-89beb531a465" class="code"><code class="language-R">library(snpMatrix)
+
+qcdata &lt;- read.plink(&quot;qc_merged&quot;)
+qcpopinfo &lt;- read.table(&quot;qc_merged.fam&quot;, header = FALSE)
+
+qcgeno &lt;- matrix(as.integer(qcdata@.Data),nrow=nrow(qcdata@.Data))
+qcgeno[qcgeno==0] &lt;- NA
+qcgeno &lt;- qcgeno-1
+# Number of missing samples per site
+nMis &lt;- colSums(is.na(qcgeno))
+# Only keep sites with 0 missing samples.
+qcgeno &lt;- qcgeno[,nMis==0]
+# Perform PCA
+qcpca &lt;- prcomp(qcgeno, scale=T, center=T)
+# Extract the PCs
+qcpcs &lt;- as.data.frame(qcpca$x)
+
+# Custom colors matching our original missingness per individual color scheme
+palette(c(&#x27;#5096CA&#x27;,&#x27;#E09B60&#x27;,&#x27;#58B173&#x27;, &#x27;#C56271&#x27;))
+plot(qcpcs$PC1, -qcpcs$PC2, col=qcpopinfo$V1, pch=19, las=1, bty=&#x27;L&#x27;,
+		xlab=&quot;PC1&quot;, ylab=&quot;PC2&quot;,
+    main=&#x27;PCA on 72 individuals from 4 populations after quality control&#x27;)
+legend(&#x27;topright&#x27;, legend=levels(qcpopinfo$V1), col=1:length(levels(qcpopinfo$V1)), pch=19)</code></pre><p id="224babff-c23c-4162-88c1-ea4d88b73793" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Plot for individual missingness</summary><div class="indented"><p id="b88debb2-e2d9-40f7-80b5-9f2514154e9c" class="">After running the command “plink --bfile wgs_data --missing” in the command line, the resulting files are exported and safed as .csv files.</p><p id="f16e6e0c-27ae-4069-8c2e-44f118fb58c6" class="">The .csv files are then loaded into python to compute the plot. </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7ed58f0c-08b7-432c-9dfb-32d5e1b3103c" class="code"><code class="language-Python">import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+missingness = pd.read_csv(&quot;missingness.csv&quot;)
+missingness_info = pd.read_csv(&quot;missing_info.lmiss.csv&quot;, sep=&quot;\t&quot;)
+
+sns.set_style(&quot;whitegrid&quot;)
+sns.color_palette(&quot;muted&quot;)
+sns.histplot(data=missingness, x=&quot;F_MISS&quot;, hue=&quot;origin&quot;, multiple=&quot;stack&quot;, binwidth=0.01)
+plt.xlabel(&quot;Frequency of missingness [binwidth = 0.01]&quot;)
+plt.ylabel(&quot;# of individuals per bin&quot;)
+plt.title(&quot;Frequency of missingness per indiviudals divided into populations&quot;)
+plt.show()</code></pre><p id="88da5b67-2088-4698-bf32-594125fed9a8" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Plot for variant missingness</summary><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5c524f50-7b09-4998-9804-924729d89d5f" class="code"><code class="language-Bash"># Getting summary statistics for missingness:
+plink --bfile wgs_data --missing -out imiss_qc.lmiss</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c62fc766-8541-4aae-b80c-1e03677ad432" class="code"><code class="language-Python">import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
+
+# Reading in variant missingness statistics
+lmiss = pd.read_table(&#x27;imiss_qc.lmiss&#x27;)
+
+# Splitting columns and column names which were merged after download from server
+new_columns = lmiss.iloc[:, 0].str.split(expand=True)
+column_names = lmiss.columns.tolist()
+split_column_names = column_names[0].split()
+new_columns.columns = split_column_names
+lmiss = new_columns
+
+# Converting fraction missingness to float for plotting
+lmiss[&#x27;F_MISS&#x27;] = lmiss[&#x27;F_MISS&#x27;].astype(float)
+
+# Setting figure framwork
+fig, axes = plt.subplots(2, 2, figsize=(10, 8))
+
+# Plot variant missingness for each population
+sns.histplot(data=pop_lmiss[pop_lmiss[&#x27;CLST&#x27;] == &#x27;AA&#x27;], x=&quot;F_MISS&quot;, binwidth=0.1, ax=axes[0, 0],
+            color = &#x27;#5096CA&#x27;)
+
+sns.histplot(data=pop_lmiss[pop_lmiss[&#x27;CLST&#x27;] == &#x27;Banjul&#x27;], x=&quot;F_MISS&quot;, binwidth=0.1, ax=axes[0, 1],
+            color = &#x27;#E09B60&#x27;)
+
+sns.histplot(data=pop_lmiss[pop_lmiss[&#x27;CLST&#x27;] == &#x27;Nairobi&#x27;], x=&quot;F_MISS&quot;, binwidth=0.1, ax=axes[1, 0],
+            color = &#x27;#58B173&#x27;)
+
+sns.histplot(data=pop_lmiss[pop_lmiss[&#x27;CLST&#x27;] == &#x27;Spain&#x27;], x=&quot;F_MISS&quot;, binwidth=0.1, ax=axes[1, 1],
+            color = &#x27;#C56271&#x27;)
+
+# setting title for each plot
+axes[0, 0].set_title(&#x27;AA Variant Missingness&#x27;)
+axes[0, 1].set_title(&#x27;Banjul Variant Missingness&#x27;)
+axes[1, 0].set_title(&#x27;Nairobi Variant Missingness&#x27;)
+axes[1, 1].set_title(&#x27;Spain Variant Missingness&#x27;)
+
+# setting limits of x-axis
+for ax in axes.flatten():
+    ax.set_xlim(0, 0.7)
+
+# setter the number of ticks on the x-axis
+for ax in axes.flatten():
+    ax.xaxis.set_major_locator(MaxNLocator(7))
+
+# making layout neat
+plt.tight_layout()
+
+# saving figure
+fig = plt.gcf()
+
+fig.savefig(&#x27;pop_lmiss.png&#x27;)</code></pre></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Plot MAF statistics</summary><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5bfd4cc6-858f-4f81-b0b0-28b71cb56a08" class="code"><code class="language-Bash"># Adding population information to the .fam file.
+grep -Po &quot;[^\t]+\t[^\t]+$&quot; wgs_data.popinfo &gt; merge1.txt
+join merge1.txt wgs_data.fam &gt; merge2.txt
+grep -Po &quot;[A-z]+ IND.+$&quot; merge2.txt &gt; wgs_data.fam
+rm merge1.txt merge2.txt
+
+# Separating the one bed file into a bed file for each population
+for population in AA Nairobi Banjul Spain do echo $population &gt; keep.txt plink --bfile wgs_data_new --keep-fam keep.txt --make-bed --out $population done
+
+# Getting MAF statistics for each population
+plink --bfile AA --mind 0.1 --geno 0.1 --freq --out AA
+plink --bfile Banjul --mind 0.1 --geno 0.1 --freq --out Banjul
+plink --bfile Nairobi --mind 0.1 --geno 0.1 --freq --out Nairobi
+plink --bfile Spain --mind 0.1 --geno 0.1 --freq --out Spain</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e89aef17-c018-4b9e-93b0-57168c08511d" class="code"><code class="language-Python">import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Reading in MAF statistics for each population
+AA = pd.read_table(&#x27;split_maf_stat/AA_frq.frq&#x27;)
+AA[&#x27;CLST&#x27;] = &#x27;AA&#x27;
+Banjul = pd.read_table(&#x27;split_maf_stat/Banjul_frq.frq&#x27;)
+Banjul[&#x27;CLST&#x27;] = &#x27;Banjul&#x27;
+Nairobi = pd.read_table(&#x27;split_maf_stat/Nairobi_frq.frq&#x27;)
+Nairobi[&#x27;CLST&#x27;] = &#x27;Nairobi&#x27;
+Spain = pd.read_table(&#x27;split_maf_stat/Spain_frq.frq&#x27;)
+Spain[&#x27;CLST&#x27;] = &#x27;Spain&#x27;
+
+# Mering the MAF statistcs for each population into one data frame.
+maf_raw = pd.concat([AA, Banjul, Nairobi, Spain])
+
+# Splitting the columns (which were merged after download from server)
+new_columns = maf_raw.iloc[:, 0].str.split(expand=True)
+
+# getteing column names
+column_names = maf_raw.columns.tolist()
+split_column_names = column_names[0].split()
+new_columns.columns = split_column_names
+
+# adding column with population (called CLST short for cluster)
+new_columns[&#x27;CLST&#x27;] = maf_raw[&#x27;CLST&#x27;]
+maf = new_columns
+
+# converting MAF values to float for plotting
+maf[&#x27;MAF&#x27;] = maf[&#x27;MAF&#x27;].astype(float)
+
+# Setting figure framwork
+fig, axes = plt.subplots(2, 2, figsize=(10, 8))
+
+# Plot MAF distribtuion for each population
+sns.histplot(data=maf[maf[&#x27;CLST&#x27;] == &#x27;AA&#x27;], x=&quot;MAF&quot;, binwidth=0.05, ax=axes[0, 0],
+            color = &#x27;#5096CA&#x27;)
+
+sns.histplot(data=maf[maf[&#x27;CLST&#x27;] == &#x27;Banjul&#x27;], x=&quot;MAF&quot;, binwidth=0.05, ax=axes[0, 1],
+            color = &#x27;#E09B60&#x27;)
+
+sns.histplot(data=maf[maf[&#x27;CLST&#x27;] == &#x27;Nairobi&#x27;], x=&quot;MAF&quot;, binwidth=0.05, ax=axes[1, 0],
+            color = &#x27;#58B173&#x27;)
+
+sns.histplot(data=maf[maf[&#x27;CLST&#x27;] == &#x27;Spain&#x27;], x=&quot;MAF&quot;, binwidth=0.05, ax=axes[1, 1],
+            color = &#x27;#C56271&#x27;)
+
+# setting titles for each plot
+axes[0, 0].set_title(&#x27;AA MAF Distribution&#x27;)
+axes[0, 1].set_title(&#x27;Banjul MAF Distribution&#x27;)
+axes[1, 0].set_title(&#x27;Nairobi MAF Distribution&#x27;)
+axes[1, 1].set_title(&#x27;Spain MAF Distribution&#x27;)
+
+# setting x-axis limit
+for ax in axes.flatten():
+    ax.set_xlim(0, 0.6)
+
+# making layout neat
+plt.tight_layout()
+
+# saving figure
+fig = plt.gcf()
+
+fig.savefig(&#x27;lmiss_imiss_qc_maf.png&#x27;)</code></pre></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Performing SFS of the populations</summary><div class="indented"><p id="90d63d71-2de1-41fa-9097-96e4996e01df" class="">SFS is done with the raw datasets (except for maf 0.01 when splitting plink files into populations, as this removes only non-existing alleles from each population)</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d9305611-d039-4147-904e-d1bf6afb04c6" class="code"><code class="language-Bash">#split plink files into the four populations with our specific QC parameters.
+for pop in AA Nairobi Banjul Spain
+do
+	echo $pop &gt; keep.txt
+	plink --bfile wgs_data --maf 0.01 --keep-fam keep.txt --make-bed --out &quot;$pop&quot;_noqc
+done</code></pre><p id="72f472b7-07ba-4d31-9273-86de7fa160c8" class="">
+</p><p id="17f6b8e4-eb9b-4504-8c26-6d5b6e96a311" class="">After seperating the four populations into seperate plink files (as described in the QC section), generate .frq.count files for them, containing the frequency of each allele:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cbf84fd-0910-4a2f-a370-1f67b2709b84" class="code"><code class="language-Bash">for pop in AA Nairobi Banjul Spain 
+do
+	plink --bfile &quot;$pop&quot;_noqc --freq counts --out &quot;$pop&quot;_noqc
+done</code></pre><p id="71a3f1d3-833b-4027-986d-35b4c5291c9a" class="">
+</p><p id="947613a3-e023-43d8-88c8-8b3a5d633a59" class="">Next, we extract the minor allele frequencies and build a multi-group histogram with them to get a site frequency spectrum!</p><p id="392ec51f-6232-4b7f-9bf6-9d9c072ae5b4" class="">
+</p><p id="64665420-e621-4a13-a11c-647563007069" class="">For this part, i had to download the .frq.counts files and use R on my own computer, as the version of R on the server is outdated and cannot use plotrix or ggplot2:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7445241d-729e-4de9-8f12-2220e14175cb" class="code"><code class="language-R">#Extract frequency data for each mutant allele
+nairobi_data &lt;- read.table(&quot;Nairobi_noqc.frq.counts&quot;, h=T)
+banjul_data &lt;- read.table(&quot;Banjul_noqc.frq.counts&quot;, h=T)
+spain_data &lt;- read.table(&quot;Spain_noqc.frq.counts&quot;, h=T)
+
+# Custom colors + extracting MAF
+cl &lt;- c(&#x27;#E09B60&#x27;, &#x27;#58B173&#x27;, &#x27;#C56271&#x27;)
+sfsdata&lt;- list(nairobi_data$C1, banjul_data$C1, spain_data$C1)
+
+# using package plotrix. The parameter &quot;xlim&quot; can be used to limit the number of bins shown.
+require(plotrix)
+multhist(sfsdata, main= &quot;Site frequency spectrum&quot;, freq = FALSE, xlab= &quot;Allele frequency&quot;, ylab= &quot;density&quot;,  col= cl)
+legend(&quot;topright&quot;, c(&quot;Nairobi&quot;, &quot;Banjul&quot;, &quot;Spain&quot;), fill=cl)</code></pre><p id="b9f8506d-e1c6-4f49-91dd-85c5b20a0504" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Plots for LD statistics</summary><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="273108c7-0349-4223-88b6-0098f07b6542" class="code"><code class="language-Bash"># Adding population information to the .fam file.
+grep -Po &quot;[^\t]+\t[^\t]+$&quot; wgs_data.popinfo &gt; merge1.txt
+join merge1.txt wgs_data.fam &gt; merge2.txt
+grep -Po &quot;[A-z]+ IND.+$&quot; merge2.txt &gt; wgs_data.fam
+rm merge1.txt merge2.txt
+
+# Separating the one bed file into a bed file for each population
+for population in AA Nairobi Banjul Spain do echo $population &gt; keep.txt plink --bfile wgs_data_new --keep-fam keep.txt --make-bed --out $population done
+
+# Getting R2 statistics for chromosome 1 for each population
+plink --bfile --chr 1 AA --mind 0.1 --geno 0.1 --maf 0.05 --r2 --ld-window 51
+plink --bfile --chr 1 Banjul --mind 0.1 --geno 0.1 --maf 0.05  --r2 --ld-window 51
+plink --bfile --chr 1 Nairobi --mind 0.1 --geno 0.1 --maf 0.05  --r2 --ld-window 51
+plink --bfile --chr 1 Spain --mind 0.1 --geno 0.1 --maf 0.05  --r2 --ld-window 51</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b07757d8-9aaf-41ac-8325-b054fc416a8b" class="code"><code class="language-Python"># Reading in R2 statistics for each population
+AA = pd.read_table(&#x27;final_qc/AA.ld&#x27;)
+AA[&#x27;CLST&#x27;] = &#x27;AA&#x27;
+Banjul = pd.read_table(&#x27;final_qc/Banjul.ld&#x27;)
+Banjul[&#x27;CLST&#x27;] = &#x27;Banjul&#x27;
+Nairobi = pd.read_table(&#x27;final_qc/Nairobi.ld&#x27;)
+Nairobi[&#x27;CLST&#x27;] = &#x27;Nairobi&#x27;
+Spain = pd.read_table(&#x27;final_qc/Spain.ld&#x27;)
+Spain[&#x27;CLST&#x27;] = &#x27;Spain&#x27;
+
+# Mering the R2 statistcs for each population into one data frame.
+R2_raw = pd.concat([AA, Banjul, Nairobi, Spain])
+
+# Splitting the columns (which were merged after download from server)
+new_columns = R2_raw.iloc[:, 0].str.split(expand=True)
+
+# getteing column names
+column_names = R2_raw.columns.tolist()
+split_column_names = column_names[0].split()
+new_columns.columns = split_column_names
+
+# adding column with population (called CLST short for cluster)
+new_columns[&#x27;CLST&#x27;] = R2_raw[&#x27;CLST&#x27;]
+R2 = new_columns
+
+# converting R2 values to float for plotting
+R2[&#x27;R2&#x27;] = R2[&#x27;R2&#x27;].astype(float)
+
+# Setting figure framwork
+fig, axes = plt.subplots(2, 2, figsize=(10, 8))
+
+# Plot R2 distribtuion for each population
+sns.histplot(data=R2[R2[&#x27;CLST&#x27;] == &#x27;AA&#x27;], x=&quot;R2&quot;, ax=axes[0, 0],
+            color = &#x27;#5096CA&#x27;)
+
+sns.histplot(data=R2[R2[&#x27;CLST&#x27;] == &#x27;Banjul&#x27;], x=&quot;R2&quot;, ax=axes[0, 1],
+            color = &#x27;#E09B60&#x27;)
+
+sns.histplot(data=R2[R2[&#x27;CLST&#x27;] == &#x27;Nairobi&#x27;], x=&quot;R2&quot;, ax=axes[1, 0],
+            color = &#x27;#58B173&#x27;)
+
+sns.histplot(data=R2[R2[&#x27;CLST&#x27;] == &#x27;Spain&#x27;], x=&quot;R2&quot;, ax=axes[1, 1],
+            color = &#x27;#C56271&#x27;)
+
+# setting titles for each plot
+axes[0, 0].set_title(&#x27;AA Distribution of Pairwise R2 Chromosome 1&#x27;)
+axes[0, 1].set_title(&#x27;Banjul Distribution of Pairwise R2 Chromosome 1&#x27;)
+axes[1, 0].set_title(&#x27;Nairobi Distribution of Pairwise R2 Chromosome 1&#x27;)
+axes[1, 1].set_title(&#x27;Spain Distribution of Pairwise R2 Chromosome 1&#x27;)
+
+# making layout neat
+plt.tight_layout()
+
+# saving figure
+fig = plt.gcf()
+
+fig.savefig(&#x27;lmiss_imiss_maf_qc_r2.png&#x27;)</code></pre></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Performing ADMIXTURE analysis</summary><div class="indented"><p id="82c5281f-4147-4686-bd96-b333513df0e4" class="">This code can be safed as an executable file on the server. </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="83d887a9-4a8e-40b9-8caf-27dfcd8de1b0" class="code"><code class="language-Shell"># admix.sh
+
+# takes a variable 1 for k value and variable 2 for bed file to use.
+# edited from the admixture exercise to only find the best run, as doing more would just overwrite the file.
+
+#!/bin/bash
+# Assumed number of ancestral populations
+K=$1
+
+# Do something 10 times
+for i in {1..10}
+do
+   # Run admixture with seed i
+   nice nohup admixture -s ${i} $2.bed $1 &gt; $2_K$1_run${i}.log 2&gt; nohup.out &amp;
+done
+
+#stop of script
+
+# use to find the best run seed and if it has converged.
+grep ^Loglikelihood: *K${K}*log | sort -k2 
+
+#run admixture again for the best loglikelihood runs to have correct data in .P and .Q files
+admixture -s 6 wgs_data_pruned.bed 2 &gt; qc_merged_k2_run5.log &amp;
+
+admixture -s 6 wgs_data_pruned.bed3 &gt; qc_merged_k3_run6.log &amp;
+
+admixture -s 4 wgs_data_pruned.bed 4 &gt; qc_merged_k4_run4.log &amp;
+
+admixture -s 3 wgs_data_pruned.bed 5 &gt; qc_merged_k5_run3.log &amp;
+
+# plot for k3 best run
+# Margins and colors
+par(mar=c(7,3,2,1), mgp=c(2,0.6,0))
+palette(c(&quot;#5096CA&quot;, &quot;#E09B60&quot;, &quot;#57B173&quot;, &quot;#C56271&quot;))
+
+# Load sample names
+popinfo &lt;- read.table(&quot;wgs_data_pruned.fam&quot;)
+sample_names &lt;- popinfo$V2
+
+# Read sample ancestral proportions
+snp_k3_run6 &lt;- as.matrix(read.table(&quot;wgs_data_pruned.3.Q&quot;))
+
+barplot(t(snp_k3_run6), col=c(2,3,1), names.arg=sample_names, cex.names=0.8,
+	border=NA, main=&quot;K=3 - Run 6&quot;, las=2, ylab=&quot;Ancestry proportion&quot;)
+
+# plot for K4 best run 
+# Margins and colors
+par(mar=c(7,3,2,1), mgp=c(2,0.6,0))
+palette(c(&quot;#5096CA&quot;, &quot;#E09B60&quot;, &quot;#57B173&quot;, &quot;#C56271&quot;))
+
+# Load sample names
+popinfo &lt;- read.table(&quot;wgs_data_pruned.fam&quot;)
+sample_names &lt;- popinfo$V2
+
+# Read sample ancestral proportions
+snp_k4_run4 &lt;- as.matrix(read.table(&quot;wgs_data_pruned.4.Q&quot;))
+
+barplot(t(snp_k4_run4), col=c(4,3,2,1), names.arg=sample_names, cex.names=0.8,
+	border=NA, main=&quot;K=4 - Run 4&quot;, las=2, ylab=&quot;Ancestry proportion&quot;)
+
+# cut popinfo file to the individuals remaining.
+cut -d &#x27; &#x27; -f2 wgs_data_pruned.fam &gt; data.fam.ids
+join -1 1 -2 1 data.fam.ids wgs_data.popinfo &gt; data.popinfo.filtered
+
+# plot eval of admixture for K2
+# Read in plotting functions
+source(&quot;visFuns.R&quot;)
+
+# Read in the population info
+popinfo &lt;- read.table(&quot;data.popinfo.filtered&quot;)
+pop = as.vector(popinfo[,3])
+
+# Read in the output 
+r &lt;- as.matrix(read.table(&quot;K2_pruned.output.corres.txt&quot;))
+plotCorRes(cor_mat = r, pop = pop, title = &quot;Correlation of residuals (K=2)&quot;, max_z=0.15, min_z=-0.15)
+
+# plot eval of admixture for K3
+# Read in the output 
+r &lt;- as.matrix(read.table(&quot;K3_pruned.output.corres.txt&quot;))
+plotCorRes(cor_mat = r, pop = pop, title = &quot;Correlation of residuals (K=3)&quot;, max_z=0.15, min_z=-0.15)
+
+# plot eval of admixture for K4
+# Read in the output 
+r &lt;- as.matrix(read.table(&quot;K4_pruned.output.corres.txt&quot;))
+plotCorRes(cor_mat = r, pop = pop, title = &quot;Correlation of residuals (K=4)&quot;, max_z=0.15, min_z=-0.15)</code></pre></div></details></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
